@@ -73,31 +73,14 @@
     </pluginManagement>
 
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.1.2</version>
-        <configuration>
-          <failsOnError>true</failsOnError>
-          <configLocation>config/checkstyle.xml</configLocation>
-          <consoleOutput>true</consoleOutput>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>checkstyle</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+    
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.1.2</version>
         <configuration>
-          <configLocation>config/checkstyle.xml</configLocation>
+          <configLocation>checkstyle.xml</configLocation>
           <consoleOutput>true</consoleOutput>
           <failsOnError>true</failsOnError>
         </configuration>
@@ -142,6 +125,9 @@
             <version>2.3.1</version>
           </dependency>
         </dependencies>
+        <configuration>
+          <repoToken>${env.COVERALLS_REPO_TOKEN}</repoToken>
+        </configuration>
       </plugin>
 
       <plugin>

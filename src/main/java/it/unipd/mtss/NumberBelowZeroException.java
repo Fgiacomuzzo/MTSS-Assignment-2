@@ -5,9 +5,9 @@
 
 package it.unipd.mtss;
 
-public class NumberUnderZeroException extends Exception {
+public class NumberBelowZeroException extends Exception {
     /* Eccezione per i numeri minori di zero */
-    public NumberUnderZeroException() {
+    public NumberBelowZeroException() {
         super("Non esistono numeri romani negativi.");
     }
 }

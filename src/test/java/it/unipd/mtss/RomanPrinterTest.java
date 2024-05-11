@@ -102,4 +102,11 @@ public class RomanPrinterTest {
                 "|_|  |_|\n"));
 
     }
+
+    @Test
+    public void testNumberZeroAsciiArt() throws NumberBelowZeroException, NumberAOneThousand {
+        int arabic_number = 0;
+        String ascii_art_for_zero = printer.print(arabic_number);
+        assertEquals(ascii_art_for_zero, new String(""));
+    }
 }

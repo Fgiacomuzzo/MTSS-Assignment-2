@@ -1,5 +1,7 @@
 package it.unipd.mtss;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -21,5 +23,15 @@ public class IntegerToRomanTest {
     public void testNumberAbove1000() throws NumberBelowZeroException, NumberAOneThousand {
         int arabic_number = 1001;
         converter.convert(arabic_number);
+    }
+
+    @Test
+    public void testZeroNumber() throws NumberBelowZeroException, NumberAOneThousand {
+        int arabic_number = 0;
+        String expected = "";
+
+        String roman_number = converter.convert(arabic_number);
+
+        assertEquals(expected, roman_number);
     }
 }

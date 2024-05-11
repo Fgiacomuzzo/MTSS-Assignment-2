@@ -36,4 +36,17 @@ public class RomanPrinterTest {
                 "    \\/    \n"));
 
     }
+
+    @Test
+    public void testPrintX() throws NumberBelowZeroException, NumberAOneThousand {
+        int arabic_number = 10;
+        String ascii_art_for_I = printer.print(arabic_number);
+        assertEquals(ascii_art_for_I, new String("__   __\n" +
+                "\\ \\ / /\n" +
+                " \\ V / \n" +
+                "  > <  \n" +
+                " / . \\ \n" +
+                "/_/ \\_\\\n"));
+
+    }
 }
